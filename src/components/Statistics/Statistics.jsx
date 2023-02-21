@@ -16,8 +16,21 @@ export class Statistics extends Component {
     });
   }
 
+  countTotalFeedback() {
+    const { good, bad, neutral } = this.state;
+    return good + bad + neutral;
+  }
+
+  countPositiveFeedbackPercentage() {
+    const { good } = this.state;
+    const total = this.countTotalFeedback();
+    return total ? Number((good * 100) / total).toFixed(0) : '';
+  }
+
   render() {
     const { good, bad, neutral } = this.state;
+    const total = this.countTotalFeedback();
+    const percentage = this.countPositiveFeedbackPercentage() || '';
     return (
       <div>
         <h2>Please leave feedback</h2>
@@ -38,13 +51,19 @@ export class Statistics extends Component {
         </div>
         <ul>
           <li>
-            good <span>{good}</span>
+            Good: <span>{good}</span>
           </li>
           <li>
-            neutral <span>{neutral}</span>
+            Neutral: <span>{neutral}</span>
           </li>
           <li>
-            bad <span>{bad}</span>
+            Bad: <span>{bad}</span>
+          </li>
+          <li>
+            Total: <span>{total}</span>
+          </li>
+          <li>
+            Positive feedback: <span>{percentage} % </span>
           </li>
         </ul>
       </div>
