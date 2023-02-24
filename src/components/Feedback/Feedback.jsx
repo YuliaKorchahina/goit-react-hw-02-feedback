@@ -1,11 +1,15 @@
 import { FeedbackOptions } from './FeedbackOptions';
-// import { Section } from './Section';
+import PropTypes from 'prop-types';
+
 
 export const Feedback = ({ onLeaveFeedback }) => {
   return (
     <div>
-      {/* <Section title="" /> */}
       <FeedbackOptions onLeaveFeedback={onLeaveFeedback} />
     </div>
   );
 };
+
+Feedback.propTypes = {
+  onLeaveFeedback: PropTypes.func.isRequired
+}

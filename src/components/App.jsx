@@ -32,19 +32,19 @@ export class App extends Component {
   render() {
     return (
       <div>
-      <Section title=''>
-        <Feedback onLeaveFeedback={this.leaveFeedback} />
-      </Section>
-      <Section title=''>
-        <Statistics
-          onCountTotalFeedback={this.countTotalFeedback}
-          onCountPositiveFeedbackPercentage={
-            this.countPositiveFeedbackPercentage
-          }
-          good={this.state.good}
-          bad={this.state.bad}
-          neutral={this.state.neutral}  />
-          </Section>
+        <Section title="Please leave feedback">
+          <Feedback onLeaveFeedback={this.leaveFeedback} />
+        </Section>
+
+        <Section title="Statistics">
+          <Statistics
+            total={this.countTotalFeedback()}
+            percentage={this.countPositiveFeedbackPercentage()}
+            good={this.state.good}
+            bad={this.state.bad}
+            neutral={this.state.neutral}
+          />
+        </Section>
       </div>
     );
   }
