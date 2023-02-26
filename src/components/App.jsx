@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Feedback } from './Feedback/Feedback';
 import { Section } from './Feedback/Section';
 import { Statistics } from './Feedback/Statistics/Statistics';
+import { Container } from './Container.styled';
 export class App extends Component {
   state = {
     good: 0,
@@ -31,7 +32,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <Feedback onLeaveFeedback={this.leaveFeedback} />
         </Section>
@@ -45,7 +46,7 @@ export class App extends Component {
             neutral={this.state.neutral}
           />
         </Section>
-      </div>
+      </Container>
     );
   }
 }

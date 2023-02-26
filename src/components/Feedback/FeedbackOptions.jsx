@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
+import { Btn, Wrapper } from 'components/Button.styled';
 
 export const FeedbackOptions = ({onLeaveFeedback}) => {
   return (
-    <div>
-    <button type="button" onClick={() => onLeaveFeedback('good')}>
+    <Wrapper>
+    <Btn type="button" onClick={() => onLeaveFeedback('good')}>
       Good 😍
-    </button>
-    <button type="button" onClick={() => onLeaveFeedback('neutral')}>
+    </Btn>
+    <Btn type="button" onClick={() => onLeaveFeedback('neutral')}>
       Neutral 😐
-    </button>
-    <button type="button" onClick={() => onLeaveFeedback('bad')}>
+    </Btn>
+    <Btn type="button" onClick={() => onLeaveFeedback('bad')}>
       Bad 😤
-    </button>
-  </div>
+    </Btn>
+  </Wrapper>
   )
 }
 
